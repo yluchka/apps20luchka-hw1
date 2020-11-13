@@ -82,20 +82,6 @@ public class TemperatureSeriesAnalysisTest {
     }
 
     @Test
-    public void testFindTempsGreaterThanWithCommonArray() {
-        double[] expResult = {3.0, 4.0, 5.0};
-        double[] actualResult = myArray.findTempsGreaterThen(2.0);
-        assertArrayEquals(expResult, actualResult, 1e-8);
-    }
-
-    @Test
-    public void testFindTempsLessThanWithCommonArray() {
-        double[] expResult = {-1.0};
-        double[] actualResult = myArray.findTempsLessThen(0.0);
-        assertArrayEquals(expResult, actualResult, 1e-8);
-    }
-
-    @Test
     public void testAddTempsWithCommonArray() {
         double expResult = 27.0;
         double actualResult = myArray.addTemps(6.0, 7.0);
@@ -128,16 +114,26 @@ public class TemperatureSeriesAnalysisTest {
         double expMax = 5.0;
         double actualMax = myArray.summaryStatistics().getMaxTemp();
         assertEquals(expMax, actualMax, 1e-8);
-
-
+    }
+    @Test
+    public void testFindTempsGreaterThanWithCommonArray() {
+        double[] expResult = {3.0, 4.0, 5.0};
+        double[] actualResult = myArray.findTempsGreaterThen(2.0);
+        assertArrayEquals(expResult, actualResult, 1e-8);
     }
 
+    @Test
+    public void testFindTempsLessThanWithCommonArray() {
+        double[] expResult = {-1.0};
+        double[] actualResult = myArray.findTempsLessThen(0.0);
+        assertArrayEquals(expResult, actualResult, 1e-8);
+    }
 
-//    @Test
-//    public void testAddTempsWithEnoughPlace() {
-//        myArray.addTemps(1.0);
-//        double expResult = 3.0;
-//        double actualResult = myArray.addTemps(2.0);
-//        assertEquals(expResult, actualResult, 1e-8);
-//    }
+    @Test
+    public void testAddTempsWithEnoughPlace() {
+        myArray.addTemps(6.0);
+        double expResult = 22.0;
+        double actualResult = myArray.addTemps(2.0);
+        assertEquals(expResult, actualResult, 1e-8);
+    }
 }

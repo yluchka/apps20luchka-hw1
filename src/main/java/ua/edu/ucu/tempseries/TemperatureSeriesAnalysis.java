@@ -134,15 +134,10 @@ public class TemperatureSeriesAnalysis {
     }
 
     public double addTemps(double... temps) {
-        for (double temp: temps) {
-            if (temp < MAGIC_NUM) {
-                throw new InputMismatchException();
-            }
-        }
         if (temperatures.length - size >= temps.length) {
             int i = size;
             for (double temp: temps) {
-                temperatures[size + i] = temps[i];
+                temperatures[size + i - 1] = temps[size - i];
                 i++;
             }
         }
@@ -162,6 +157,11 @@ public class TemperatureSeriesAnalysis {
         for (double temp: temperatures) {
             sum += temp;
     }
+        for (double temp: temperatures) {
+            if (temp < MAGIC_NUM) {
+                throw new InputMismatchException();
+            }
+        }
         return sum;
     }
 }

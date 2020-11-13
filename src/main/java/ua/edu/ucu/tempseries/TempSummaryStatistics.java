@@ -6,6 +6,12 @@ public final class TempSummaryStatistics {
     private final double minTemp;
     private final double maxTemp;
 
+    public TempSummaryStatistics(TemperatureSeriesAnalysis seriesAnalysis) {
+        avgTemp = seriesAnalysis.average();
+        devTemp = seriesAnalysis.deviation();
+        minTemp = seriesAnalysis.min();
+        maxTemp = seriesAnalysis.max();
+    }
     public double getAvgTemp() {
         return avgTemp;
     }
@@ -20,12 +26,5 @@ public final class TempSummaryStatistics {
 
     public double getMinTemp() {
         return minTemp;
-    }
-
-    public TempSummaryStatistics(TemperatureSeriesAnalysis seriesAnalysis) {
-        avgTemp = seriesAnalysis.average();
-        devTemp = seriesAnalysis.deviation();
-        minTemp = seriesAnalysis.min();
-        maxTemp = seriesAnalysis.max();
     }
 }
