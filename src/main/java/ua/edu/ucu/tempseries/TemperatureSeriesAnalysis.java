@@ -1,6 +1,5 @@
 package ua.edu.ucu.tempseries;
 
-import java.util.Arrays;
 import java.util.InputMismatchException;
 
 public class TemperatureSeriesAnalysis {
@@ -44,7 +43,7 @@ public class TemperatureSeriesAnalysis {
         }
         return Math.sqrt(dev / size);
     }
-    private double compare(String sign){
+    private double compare(String sign) {
         double min = temperatures[0];
         double max = temperatures[0];
         for (double temperature : temperatures) {
@@ -90,7 +89,7 @@ public class TemperatureSeriesAnalysis {
         return closestTemp;
     }
 
-    public double findTempClosestToZero(){
+    public double findTempClosestToZero() {
         return findTempClosestToValue(0);
     }
 

@@ -114,19 +114,19 @@ public class TemperatureSeriesAnalysisTest {
     @Test
     public void testMyArrayWithSummaryStatistics() {
         double expAvg = 2.3333333333333335;
-        double actualAvg = myArray.summaryStatistics().avgTemp;
+        double actualAvg = myArray.summaryStatistics().getAvgTemp();
         assertEquals(expAvg, actualAvg, 1e-8);
 
         double expDev = 1.9720265943665387;
-        double actualDev = myArray.summaryStatistics().devTemp;
+        double actualDev = myArray.summaryStatistics().getDevTemp();
         assertEquals(expDev, actualDev, 1e-8);
 
         double expMin = -1.0;
-        double actualMin = myArray.summaryStatistics().minTemp;
+        double actualMin = myArray.summaryStatistics().getMinTemp();
         assertEquals(expMin, actualMin, 1e-8);
 
         double expMax = 5.0;
-        double actualMax = myArray.summaryStatistics().maxTemp;
+        double actualMax = myArray.summaryStatistics().getMaxTemp();
         assertEquals(expMax, actualMax, 1e-8);
 
 
