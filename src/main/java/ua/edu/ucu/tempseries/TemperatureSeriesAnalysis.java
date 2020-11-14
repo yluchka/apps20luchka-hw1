@@ -7,9 +7,9 @@ public class TemperatureSeriesAnalysis {
     static final double MAGIC_NUM = -273.0;
     private double[] temperatures;
     private int size = 0;
-    public TemperatureSeriesAnalysis(double[] temperatures) {
+    public TemperatureSeriesAnalysis(double[] tempSeries) {
+        temperatures = tempSeries;
         size = temperatures.length;
-        this.temperatures = temperatures;
         for (double temp: temperatures) {
             if (temp < MAGIC_NUM) {
                 throw new InputMismatchException();
@@ -17,7 +17,7 @@ public class TemperatureSeriesAnalysis {
         }
     }
     public TemperatureSeriesAnalysis() {
-        this.temperatures = new double[1];
+        temperatures = new double[1];
     }
     private void checkIllegalArgumentException() {
         if (size == 0) {
