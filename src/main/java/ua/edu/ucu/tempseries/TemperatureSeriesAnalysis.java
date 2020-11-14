@@ -76,8 +76,9 @@ public class TemperatureSeriesAnalysis {
     public double findTempClosestToValue(double tempValue) {
         checkIllegalArgumentException();
         double currentValue = temperatures[0];
-        for (double temp: temperatures){
-            if (Math.abs(tempValue - temp) <= Math.abs(currentValue - tempValue)){
+        for (double temp: temperatures) {
+            if (Math.abs(tempValue - temp)
+                    <= Math.abs(currentValue - tempValue)) {
                 if (Math.abs(temp) - Math.abs(tempValue) < DELTA) {
                     currentValue = Math.max(temp, currentValue);
                 }
