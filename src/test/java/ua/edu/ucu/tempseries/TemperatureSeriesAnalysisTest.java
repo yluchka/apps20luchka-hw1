@@ -15,6 +15,10 @@ public class TemperatureSeriesAnalysisTest {
         myArray = new TemperatureSeriesAnalysis(new double[]{-1.0, 1.0, 2.0, 3.0, 4.0, 5.0});
         emptyArray = new TemperatureSeriesAnalysis();
     }
+    @Test(expected = InputMismatchException.class)
+    public void testInputMismatch(){
+        TemperatureSeriesAnalysis arr = new TemperatureSeriesAnalysis(new double[]{1.0, 2.0, -500});
+    }
 
     @Test(expected = IllegalArgumentException.class)
     public void testAverageEmpty() {
