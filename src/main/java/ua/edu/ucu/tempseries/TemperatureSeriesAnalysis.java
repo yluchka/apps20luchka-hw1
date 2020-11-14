@@ -8,7 +8,7 @@ public class TemperatureSeriesAnalysis {
     private double[] temperatures;
     private int size = 0;
     public TemperatureSeriesAnalysis(double[] tempSeries) {
-        temperatures = tempSeries;
+        temperatures = tempSeries.clone();
         size = temperatures.length;
         for (double temp: temperatures) {
             if (temp < MAGIC_NUM) {
